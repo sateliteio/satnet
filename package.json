@@ -1,5 +1,5 @@
 {
-  "name": "@satelite/satnet",
+  "name": "@sateliteio/satnet",
   "version": "0.1.0",
   "description": "Satelite networking part",
   "main": "dist/index.js",
