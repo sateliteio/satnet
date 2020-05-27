@@ -11,7 +11,7 @@ export class Device {
   public local: MachineLocalTransport;
   public transport: TCPTransport;
   public discovery: TCPPeerMDNSDiscovery;
-  public nodeManger: NodeManager;
+  public nodeManager: NodeManager;
   public type: "any" | "bridge" | "embedded";
 
   /**
@@ -23,7 +23,7 @@ export class Device {
    */
   constructor(networkName: string, type: "any" | "bridge" | "embedded") {
     this.type = type;
-    this.nodeManger = new NodeManager();
+    this.nodeManager = new NodeManager();
     this.net = new Network({
       name: networkName,
       authentication: [new AnonymousAuth()],
@@ -54,12 +54,12 @@ export class Device {
 
   private onNodeAvailable(node: Node): void {
     debug("nodeAvailable", node);
-    this.nodeManger.addNode(node);
+    this.nodeManager.addNode(node);
   }
 
   private onNodeUnavailable(node: Node): void {
     debug("nodeUnavailable", node);
-    this.nodeManger.removeNode(node);
+    this.nodeManager.removeNode(node);
   }
 }
 
