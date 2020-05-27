@@ -13,7 +13,7 @@ export class NodeManager {
 
   public addNode(node: Node): Node[] {
     debug("addNode");
-    if (this.nodes.indexOf(node) !== -1) {
+    if (this.nodes.indexOf(node) === -1) {
       debug("addNode:pushNode");
       this.nodes.push(node);
     } else {
